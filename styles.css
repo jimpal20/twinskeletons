@@ -1,0 +1,265 @@
+/* Twin Skeletons LLC — shared styles */
+:root {
+  --paper: #F5F2EA;
+  --ink: #161616;
+  --ink-2: #55524B;
+  --rule: #DDD8CC;
+  --card: #FFFFFF;
+  --accent: #E0552B;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+.wordmark:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header-inner,
+.site-footer-inner {
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+}
+
+.logo-slot:empty {
+  display: none;
+}
+
+.logo-slot:not(:empty) {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  color: var(--ink);
+  margin: 0;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.hero {
+  padding: 56px 0 40px;
+}
+
+.hero h1 {
+  margin-bottom: 0.55em;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  margin-bottom: 0.7em;
+}
+
+.features {
+  list-style: none;
+  margin: 1em 0 0;
+  padding: 0;
+}
+
+.features li {
+  position: relative;
+  padding-left: 22px;
+  margin: 0 0 12px;
+}
+
+.features li:last-child {
+  margin-bottom: 0;
+}
+
+.features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+}
+
+.legal h1 {
+  margin-top: 40px;
+}
+
+.company-line {
+  font-weight: 700;
+  margin: 1em 0 0.35em;
+}
+
+.meta-lines {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin: 0 0 1em;
+}
+
+.draft-pill {
+  display: inline-block;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-2);
+  border: 1px dashed var(--rule);
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin: 0 0 1.5em;
+}
+
+.legal h2 {
+  margin: 40px 0 0.7em;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+
+.legal ul {
+  margin: 0 0 1em;
+  padding-left: 1.25em;
+}
+
+.legal li + li {
+  margin-top: 0.35em;
+}
+
+.legal ul ::marker {
+  color: var(--accent);
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 48px;
+  padding-block: 32px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.not-found {
+  padding: 56px 0 80px;
+}
+
+.not-found h1 {
+  margin-bottom: 0.6em;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  main,
+  .site-header-inner,
+  .site-footer-inner {
+    padding-inline: 28px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+}
